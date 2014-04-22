@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Honeywell Technical Test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="assets/js/test.js"></script>
+  <link rel="stylesheet" type="text/css" href="assets/css/test.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/test.css" />
+  <script>
+    $(function() {
+      var test = new Honeywell.ClickRotatePopup()
+      test.init('#circle')
+    })
+  </script>
+</head>
+<body>
+  <div id="main" class="main">
+    <div id="circle" class="circle"></div>
+  </div>
+  <div id="popupPrototype">
+      <div class="rect"></div>
+      <div class="pointer">
+        <div class="triangle"></div>
+        <div class="inner"></div>
+      </div>
+    </div>
+</body>
+</html>

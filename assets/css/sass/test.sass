@@ -1,0 +1,90 @@
+@mixin rotate($degrees)
+	-webkit-transform: rotate($degrees)
+	-moz-transform: rotate($degrees)
+	-ms-transform: rotate($degrees)
+	-o-transform: rotate($degrees)
+	transform: rotate($degrees)
+
+@mixin unselectable
+	-moz-user-select: -moz-none
+	-khtml-user-select: none
+	-webkit-user-select: none
+	-o-user-select: none
+	user-select: none
+
+html,
+body
+	margin: 0
+	padding: 0
+	height: 100%
+	width: 100%
+
+.main
+	padding: 400px 0
+
+.circle
+	background-color: #000
+	border-radius: 20px
+	margin: 0 auto
+	height: 40px
+	width: 40px
+	position: relative
+	z-index: 5
+	@include unselectable
+
+#popupPrototype
+	display: none
+	position: absolute
+	height: 400px
+	width: 300px
+	z-index: 1
+	@include unselectable
+
+	&.north
+		@include rotate(0deg)
+
+	&.south
+		@include rotate(180deg)
+
+	&.east
+		@include rotate(90deg)
+
+	&.west
+		@include rotate(-90deg)
+
+	&.northwest
+		@include rotate(-45deg)
+
+	&.northeast
+		@include rotate(45deg)
+
+	&.southeast
+		@include rotate(135deg)
+
+	&.southwest
+		@include rotate(-135deg)
+
+	.rect
+		border: solid 3px #000
+		height: 368px
+		
+	.pointer
+		position: relative
+		margin: -3px auto 0
+		width: 60px
+
+		.triangle, 
+		.inner
+			border-color: #000 transparent transparent transparent
+			border-style: solid
+			border-width: 29px 30px 0 30px
+			position: absolute
+			height: 0px
+			width: 0px
+
+		.inner
+			border-color: #fff transparent transparent transparent
+			border-width: 26px 26px 0 26px
+			left: 4px
+			top: -1px
+
